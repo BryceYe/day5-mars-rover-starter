@@ -132,7 +132,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_0_0_N_when_input_0_0_N_E(){
+    public void should_return_0_0_N_when_input_0_0_E_L(){
         int x = 0;
         int y = 0;
         String direction = "E";
@@ -143,6 +143,81 @@ public class MarsRoverTest {
         marsRover.executeComment(comment);
 
         MarsRover expectation = new MarsRover(0, 0, "N");
+
+        assertEquals(marsRover.x , expectation.x);
+        assertEquals(marsRover.y , expectation.y);
+        assertEquals(marsRover.direction , expectation.direction);
+    }
+
+
+    @Test
+    public void should_return_0_0_E_when_input_0_0_N_R(){
+        int x = 0;
+        int y = 0;
+        String direction = "N";
+        String comment = "R";
+
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        marsRover.executeComment(comment);
+
+        MarsRover expectation = new MarsRover(0, 0, "E");
+
+        assertEquals(marsRover.x , expectation.x);
+        assertEquals(marsRover.y , expectation.y);
+        assertEquals(marsRover.direction , expectation.direction);
+    }
+
+
+    @Test
+    public void should_return_0_0_N_when_input_0_0_W_R(){
+        int x = 0;
+        int y = 0;
+        String direction = "W";
+        String comment = "R";
+
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        marsRover.executeComment(comment);
+
+        MarsRover expectation = new MarsRover(0, 0, "N");
+
+        assertEquals(marsRover.x , expectation.x);
+        assertEquals(marsRover.y , expectation.y);
+        assertEquals(marsRover.direction , expectation.direction);
+    }
+
+
+    @Test
+    public void should_return_0_0_W_when_input_0_0_S_R(){
+        int x = 0;
+        int y = 0;
+        String direction = "S";
+        String comment = "R";
+
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        marsRover.executeComment(comment);
+
+        MarsRover expectation = new MarsRover(0, 0, "W");
+
+        assertEquals(marsRover.x , expectation.x);
+        assertEquals(marsRover.y , expectation.y);
+        assertEquals(marsRover.direction , expectation.direction);
+    }
+
+    @Test
+    public void should_return_0_0_S_when_input_0_0_E_R(){
+        int x = 0;
+        int y = 0;
+        String direction = "E";
+        String comment = "R";
+
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        marsRover.executeComment(comment);
+
+        MarsRover expectation = new MarsRover(0, 0, "S");
 
         assertEquals(marsRover.x , expectation.x);
         assertEquals(marsRover.y , expectation.y);

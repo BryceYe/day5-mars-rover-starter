@@ -12,7 +12,7 @@ public class MarsRover {
     }
 
     public void executeComment(String comment) {
-        if(comment.equals("M")){
+        if (comment.equals("M")) {
             switch (direction) {
                 case "N":
                     this.y++;
@@ -27,7 +27,7 @@ public class MarsRover {
                     this.x--;
                     break;
             }
-        } else if(comment.equals("L")){
+        } else if (comment.equals("L")) {
             switch (direction) {
                 case "N":
                     direction = "W";
@@ -40,6 +40,21 @@ public class MarsRover {
                     break;
                 case "W":
                     direction = "S";
+                    break;
+            }
+        } else if (comment.equals("R")) {
+            switch (direction) {
+                case "N":
+                    direction = "E";
+                    break;
+                case "E":
+                    direction = "S";
+                    break;
+                case "S":
+                    direction = "W";
+                    break;
+                case "W":
+                    direction = "N";
                     break;
             }
         }
