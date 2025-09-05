@@ -12,51 +12,67 @@ public class MarsRover {
     }
 
     public void executeComment(String comment) {
-        if (comment.equals("M")) {
-            switch (direction) {
-                case "N":
-                    this.y++;
-                    break;
-                case "E":
-                    this.x++;
-                    break;
-                case "S":
-                    this.y--;
-                    break;
-                case "W":
-                    this.x--;
-                    break;
-            }
-        } else if (comment.equals("L")) {
-            switch (direction) {
-                case "N":
-                    direction = "W";
-                    break;
-                case "E":
-                    direction = "N";
-                    break;
-                case "S":
-                    direction = "E";
-                    break;
-                case "W":
-                    direction = "S";
-                    break;
-            }
-        } else if (comment.equals("R")) {
-            switch (direction) {
-                case "N":
-                    direction = "E";
-                    break;
-                case "E":
-                    direction = "S";
-                    break;
-                case "S":
-                    direction = "W";
-                    break;
-                case "W":
-                    direction = "N";
-                    break;
-            }
+        switch (comment) {
+            case "M":
+                moveRover();
+                break;
+            case "L":
+                turnLeftRover();
+                break;
+            case "R":
+                turnRightRover();
+                break;
+        }
+    }
+
+    private void turnRightRover() {
+        switch (direction) {
+            case "N":
+                direction = "E";
+                break;
+            case "E":
+                direction = "S";
+                break;
+            case "S":
+                direction = "W";
+                break;
+            case "W":
+                direction = "N";
+                break;
+        }
+    }
+
+    private void turnLeftRover() {
+        switch (direction) {
+            case "N":
+                direction = "W";
+                break;
+            case "E":
+                direction = "N";
+                break;
+            case "S":
+                direction = "E";
+                break;
+            case "W":
+                direction = "S";
+                break;
+        }
+    }
+
+    private void moveRover() {
+        switch (direction) {
+            case "N":
+                this.y++;
+                break;
+            case "E":
+                this.x++;
+                break;
+            case "S":
+                this.y--;
+                break;
+            case "W":
+                this.x--;
+                break;
         }
     }
 
