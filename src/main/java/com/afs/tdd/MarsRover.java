@@ -1,6 +1,11 @@
 package com.afs.tdd;
 
 public class MarsRover {
+    private static final String NORTH = "N";
+    private static final String EAST = "E";
+    private static final String SOUTH = "S";
+    private static final String WEST = "W";
+
     int x;
     int y;
     String direction;
@@ -27,54 +32,52 @@ public class MarsRover {
 
     private void turnRightRover() {
         switch (direction) {
-            case "N":
-                direction = "E";
+            case NORTH:
+                direction = EAST;
                 break;
-            case "E":
-                direction = "S";
+            case EAST:
+                direction = SOUTH;
                 break;
-            case "S":
-                direction = "W";
+            case SOUTH:
+                direction = WEST;
                 break;
-            case "W":
-                direction = "N";
+            case WEST:
+                direction = NORTH;
                 break;
         }
     }
 
     private void turnLeftRover() {
         switch (direction) {
-            case "N":
-                direction = "W";
+            case NORTH:
+                direction = WEST;
                 break;
-            case "E":
-                direction = "N";
+            case EAST:
+                direction = NORTH;
                 break;
-            case "S":
-                direction = "E";
+            case SOUTH:
+                direction = EAST;
                 break;
-            case "W":
-                direction = "S";
+            case WEST:
+                direction = SOUTH;
                 break;
         }
     }
 
     private void moveRover() {
         switch (direction) {
-            case "N":
+            case NORTH:
                 this.y++;
                 break;
-            case "E":
+            case EAST:
                 this.x++;
                 break;
-            case "S":
+            case SOUTH:
                 this.y--;
                 break;
-            case "W":
+            case WEST:
                 this.x--;
                 break;
         }
     }
-
-
 }
