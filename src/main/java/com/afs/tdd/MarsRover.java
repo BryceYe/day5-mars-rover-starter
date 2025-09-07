@@ -16,6 +16,7 @@ public class MarsRover {
     private static final Map<String, String> RIGHT_TURN_MAP = new HashMap<>();
     private static final Map<String, String> LEFT_TURN_MAP = new HashMap<>();
     private static final Map<String, int[]> MOVE_FORWARD_MAP = new HashMap<>();
+    private static final Map<String, int[]> MOVE_BACK_MAP = new HashMap<>();
 
     static {
         RIGHT_TURN_MAP.put(NORTH, EAST);
@@ -32,6 +33,8 @@ public class MarsRover {
         MOVE_FORWARD_MAP.put(EAST,  new int[]{1, 0});
         MOVE_FORWARD_MAP.put(SOUTH, new int[]{0, -1});
         MOVE_FORWARD_MAP.put(WEST,  new int[]{-1, 0});
+
+        MOVE_BACK_MAP.put(NORTH, new int[]{0, -1});
     }
 
     public MarsRover(int x, int y, String direction) {
@@ -71,5 +74,8 @@ public class MarsRover {
         this.y += delta[1];
     }
     private void moveBackRover() {
+        int[] delta = MOVE_BACK_MAP.get(direction);
+        this.x += delta[0];
+        this.y += delta[1];
     }
 }
