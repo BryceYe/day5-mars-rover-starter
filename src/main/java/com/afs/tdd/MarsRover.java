@@ -1,5 +1,8 @@
 package com.afs.tdd;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MarsRover {
     private static final String NORTH = "N";
     private static final String EAST = "E";
@@ -9,6 +12,27 @@ public class MarsRover {
     int x;
     int y;
     String direction;
+
+    private static final Map<String, String> RIGHT_TURN_MAP = new HashMap<>();
+    private static final Map<String, String> LEFT_TURN_MAP = new HashMap<>();
+    private static final Map<String, int[]> MOVE_FORWARD_MAP = new HashMap<>();
+
+    static {
+        RIGHT_TURN_MAP.put(NORTH, EAST);
+        RIGHT_TURN_MAP.put(EAST, SOUTH);
+        RIGHT_TURN_MAP.put(SOUTH, WEST);
+        RIGHT_TURN_MAP.put(WEST, NORTH);
+
+        LEFT_TURN_MAP.put(NORTH, WEST);
+        LEFT_TURN_MAP.put(WEST, SOUTH);
+        LEFT_TURN_MAP.put(SOUTH, EAST);
+        LEFT_TURN_MAP.put(EAST, NORTH);
+
+        MOVE_FORWARD_MAP.put(NORTH, new int[]{0, 1});
+        MOVE_FORWARD_MAP.put(EAST,  new int[]{1, 0});
+        MOVE_FORWARD_MAP.put(SOUTH, new int[]{0, -1});
+        MOVE_FORWARD_MAP.put(WEST,  new int[]{-1, 0});
+    }
 
     public MarsRover(int x, int y, String direction) {
         this.x = x;
@@ -31,53 +55,16 @@ public class MarsRover {
     }
 
     private void turnRightRover() {
-        switch (direction) {
-            case NORTH:
-                direction = EAST;
-                break;
-            case EAST:
-                direction = SOUTH;
-                break;
-            case SOUTH:
-                direction = WEST;
-                break;
-            case WEST:
-                direction = NORTH;
-                break;
-        }
+        direction = RIGHT_TURN_MAP.get(direction);
     }
 
     private void turnLeftRover() {
-        switch (direction) {
-            case NORTH:
-                direction = WEST;
-                break;
-            case EAST:
-                direction = NORTH;
-                break;
-            case SOUTH:
-                direction = EAST;
-                break;
-            case WEST:
-                direction = SOUTH;
-                break;
-        }
+        direction = LEFT_TURN_MAP.get(direction);
     }
 
     private void moveRover() {
-        switch (direction) {
-            case NORTH:
-                this.y++;
-                break;
-            case EAST:
-                this.x++;
-                break;
-            case SOUTH:
-                this.y--;
-                break;
-            case WEST:
-                this.x--;
-                break;
-        }
+        int[] delta = MOVE_FORWARD_MAP.get(direction);
+        this.x += delta[0];
+        this.y += delta[1];
     }
 }
