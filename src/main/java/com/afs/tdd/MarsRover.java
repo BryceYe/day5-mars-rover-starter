@@ -51,6 +51,9 @@ public class MarsRover {
             case "R":
                 turnRightRover();
                 break;
+            case "MB":
+                moveBackRover();
+                break;
         }
     }
 
@@ -66,5 +69,7 @@ public class MarsRover {
         int[] delta = MOVE_FORWARD_MAP.get(direction);
         this.x += delta[0];
         this.y += delta[1];
+    }
+    private void moveBackRover() {
     }
 }
