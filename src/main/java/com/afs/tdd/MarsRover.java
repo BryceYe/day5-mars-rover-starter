@@ -11,8 +11,8 @@ public class MarsRover {
         this.direction = direction;
     }
 
-    public void executeComment(String comment) {
-        switch (comment) {
+    public void executeCommand(String command) {
+        switch (command) {
             case "M":
                 moveRover();
                 break;

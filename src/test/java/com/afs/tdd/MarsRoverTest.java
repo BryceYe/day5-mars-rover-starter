@@ -10,11 +10,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "N";
-        String comment = "M";
+        String command = "M";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 1, "N");
 
@@ -28,11 +28,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "E";
-        String comment = "M";
+        String command = "M";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(1, 0, "E");
 
@@ -46,11 +46,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "S";
-        String comment = "M";
+        String command = "M";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, -1, "S");
 
@@ -64,11 +64,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "W";
-        String comment = "M";
+        String command = "M";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(-1, 0, "W");
 
@@ -82,11 +82,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "N";
-        String comment = "L";
+        String command = "L";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "W");
 
@@ -100,11 +100,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "W";
-        String comment = "L";
+        String command = "L";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "S");
 
@@ -118,11 +118,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "S";
-        String comment = "L";
+        String command = "L";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "E");
 
@@ -136,11 +136,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "E";
-        String comment = "L";
+        String command = "L";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "N");
 
@@ -155,11 +155,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "N";
-        String comment = "R";
+        String command = "R";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "E");
 
@@ -174,11 +174,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "W";
-        String comment = "R";
+        String command = "R";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "N");
 
@@ -193,11 +193,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "S";
-        String comment = "R";
+        String command = "R";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "W");
 
@@ -211,11 +211,11 @@ public class MarsRoverTest {
         int x = 0;
         int y = 0;
         String direction = "E";
-        String comment = "R";
+        String command = "R";
 
         MarsRover marsRover = new MarsRover(x, y, direction);
 
-        marsRover.executeComment(comment);
+        marsRover.executeCommand(command);
 
         MarsRover expectation = new MarsRover(0, 0, "S");
 
