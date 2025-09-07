@@ -36,6 +36,7 @@ public class MarsRover {
 
         MOVE_BACK_MAP.put(NORTH, new int[]{0, -1});
         MOVE_BACK_MAP.put(WEST,  new int[]{1, 0});
+        MOVE_BACK_MAP.put(SOUTH, new int[]{0, 1});
     }
 
     public MarsRover(int x, int y, String direction) {
