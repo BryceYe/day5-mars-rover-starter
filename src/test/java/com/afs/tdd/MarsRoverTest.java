@@ -253,7 +253,7 @@ public class MarsRoverTest {
 
         marsRover.executeCommand(command);
 
-        MarsRover expectation = new MarsRover(-1, 0, "W");
+        MarsRover expectation = new MarsRover(1, 0, "W");
 
         assertEquals(marsRover.x , expectation.x);
         assertEquals(marsRover.y , expectation.y);
