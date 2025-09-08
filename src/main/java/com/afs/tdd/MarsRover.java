@@ -1,5 +1,7 @@
 package com.afs.tdd;
 
+import java.util.Arrays;
+
 public class MarsRover {
     private static final String NORTH = "N";
     private static final String EAST = "E";
@@ -24,9 +26,7 @@ public class MarsRover {
     }
 
     public void executeCommands(Location location, String commands) {
-        for (char command : commands.toCharArray()) {
-            executeCommand(location, String.valueOf(command));
-        }
+        Arrays.stream(commands.split("")).forEach(command -> executeCommand(location, command));
     }
 
     private void turnRightRover(Location location) {
