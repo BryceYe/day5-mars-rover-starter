@@ -34,7 +34,9 @@ public class MarsRover {
     }
 
     public void executeCommands(String commands) {
-
+        for (char command : commands.toCharArray()) {
+            executeCommand(String.valueOf(command));
+        }
     }
 
     private void turnRightRover() {
