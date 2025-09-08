@@ -6,103 +6,93 @@ public class MarsRover {
     private static final String SOUTH = "S";
     private static final String WEST = "W";
 
-    int x;
-    int y;
-    String direction;
-
-    public MarsRover(int x, int y, String direction) {
-        this.x = x;
-        this.y = y;
-        this.direction = direction;
-    }
-
-    public void executeCommand(String command) {
+    public void executeCommand(Location location, String command) {
         switch (command) {
             case "M":
-                moveRover();
+                moveRover(location);
                 break;
             case "L":
-                turnLeftRover();
+                turnLeftRover(location);
                 break;
             case "R":
-                turnRightRover();
+                turnRightRover(location);
                 break;
             case "MB":
-                moveBackRover();
+                moveBackRover(location);
                 break;
         }
     }
 
-    public void executeCommands(String commands) {
+    public void executeCommands(Location location, String commands) {
         for (char command : commands.toCharArray()) {
-            executeCommand(String.valueOf(command));
+            executeCommand(location, String.valueOf(command));
         }
     }
 
-    private void turnRightRover() {
-        switch (direction) {
+    private void turnRightRover(Location location) {
+        switch (location.getDirection()) {
             case NORTH:
-                direction = EAST;
+                location.setDirection(EAST);
                 break;
             case EAST:
-                direction = SOUTH;
+                location.setDirection(SOUTH);
                 break;
             case SOUTH:
-                direction = WEST;
+                location.setDirection(WEST);
                 break;
             case WEST:
-                direction = NORTH;
-                break;
-        }
-    }
-
-    private void turnLeftRover() {
-        switch (direction) {
-            case NORTH:
-                direction = WEST;
-                break;
-            case EAST:
-                direction = NORTH;
-                break;
-            case SOUTH:
-                direction = EAST;
-                break;
-            case WEST:
-                direction = SOUTH;
+                location.setDirection(NORTH);
                 break;
         }
     }
 
-    private void moveRover() {
-        switch (direction) {
+    private void turnLeftRover(Location location) {
+        switch (location.getDirection()) {
             case NORTH:
-                this.y++;
+                location.setDirection(WEST);
                 break;
             case EAST:
-                this.x++;
+                location.setDirection(NORTH);
                 break;
             case SOUTH:
-                this.y--;
+                location.setDirection(EAST);
                 break;
             case WEST:
-                this.x--;
+                location.setDirection(SOUTH);
                 break;
         }
     }
 
-    private void moveBackRover() {
-        switch (direction) {
+    private void moveRover(Location location) {
+        switch (location.getDirection()) {
             case NORTH:
-                this.y--;
+                location.setY(location.getY() + 1);
                 break;
             case EAST:
-                this.x--;
+                location.setX(location.getX() + 1);
                 break;
             case SOUTH:
-                this.y++;
+                location.setY(location.getY() - 1);
                 break;
             case WEST:
-                this.x++;
+                location.setX(location.getX() - 1);
+                break;
+        }
+    }
+
+    private void moveBackRover(Location location) {
+        switch (location.getDirection()) {
+            case NORTH:
+                location.setY(location.getY() - 1);
+                break;
+            case EAST:
+                location.setX(location.getX() - 1);
+                break;
+            case SOUTH:
+                location.setY(location.getY() + 1);
+                break;
+            case WEST:
+                location.setX(location.getX() + 1);
                 break;
         }
     }

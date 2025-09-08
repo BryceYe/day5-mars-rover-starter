@@ -12,15 +12,16 @@ public class MarsRoverTest {
         String direction = "N";
         String command = "M";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 1, "N");
+        Location expectedLocation = new Location(0, 1, "N");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -30,15 +31,16 @@ public class MarsRoverTest {
         String direction = "E";
         String command = "M";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(1, 0, "E");
+        Location expectedLocation = new Location(1, 0, "E");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -48,15 +50,16 @@ public class MarsRoverTest {
         String direction = "S";
         String command = "M";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, -1, "S");
+        Location expectedLocation = new Location(0, -1, "S");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -66,15 +69,16 @@ public class MarsRoverTest {
         String direction = "W";
         String command = "M";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(-1, 0, "W");
+        Location expectedLocation = new Location(-1, 0, "W");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -84,15 +88,16 @@ public class MarsRoverTest {
         String direction = "N";
         String command = "L";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "W");
+        Location expectedLocation = new Location(0, 0, "W");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -102,15 +107,16 @@ public class MarsRoverTest {
         String direction = "W";
         String command = "L";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "S");
+        Location expectedLocation = new Location(0, 0, "S");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -120,15 +126,16 @@ public class MarsRoverTest {
         String direction = "S";
         String command = "L";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "E");
+        Location expectedLocation = new Location(0, 0, "E");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -138,15 +145,16 @@ public class MarsRoverTest {
         String direction = "E";
         String command = "L";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "N");
+        Location expectedLocation = new Location(0, 0, "N");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
 
@@ -157,15 +165,16 @@ public class MarsRoverTest {
         String direction = "N";
         String command = "R";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "E");
+        Location expectedLocation = new Location(0, 0, "E");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
 
@@ -176,15 +185,16 @@ public class MarsRoverTest {
         String direction = "W";
         String command = "R";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "N");
+        Location expectedLocation = new Location(0, 0, "N");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
 
@@ -195,15 +205,16 @@ public class MarsRoverTest {
         String direction = "S";
         String command = "R";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "W");
+        Location expectedLocation = new Location(0, 0, "W");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
@@ -213,105 +224,111 @@ public class MarsRoverTest {
         String direction = "E";
         String command = "R";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 0, "S");
+        Location expectedLocation = new Location(0, 0, "S");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
-    public void should_return_0_0_N_when_input_0_0_N_MB(){
+    public void should_return_0_ne1_N_when_input_0_0_N_MB(){
         int x = 0;
         int y = 0;
         String direction = "N";
         String command = "MB";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, -1, "N");
+        Location expectedLocation = new Location(0, -1, "N");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
-    public void should_return_0_0_W_when_input_0_0_W_MB(){
+    public void should_return_1_0_W_when_input_0_0_W_MB(){
         int x = 0;
         int y = 0;
         String direction = "W";
         String command = "MB";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(1, 0, "W");
+        Location expectedLocation = new Location(1, 0, "W");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
-    public void should_return_0_0_S_when_input_0_0_S_MB(){
+    public void should_return_0_1_S_when_input_0_0_S_MB(){
         int x = 0;
         int y = 0;
         String direction = "S";
         String command = "MB";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(0, 1, "S");
+        Location expectedLocation = new Location(0, 1, "S");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
-    public void should_return_0_0_E_when_input_0_0_E_MB(){
+    public void should_return_ne1_0_E_when_input_0_0_E_MB(){
         int x = 0;
         int y = 0;
         String direction = "E";
         String command = "MB";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommand(command);
+        marsRover.executeCommand(location, command);
 
-        MarsRover expectation = new MarsRover(-1, 0, "E");
+        Location expectedLocation = new Location(-1, 0, "E");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
     @Test
-    public void should_return_1_1_N_when_input_0_0_N_MMRMM(){
+    public void should_return_2_2_E_when_input_0_0_N_MMRMM(){
         int x = 0;
         int y = 0;
         String direction = "N";
         String commands = "MMRMM";
 
-        MarsRover marsRover = new MarsRover(x, y, direction);
+        Location location = new Location(x,y,direction);
+        MarsRover marsRover = new MarsRover();
 
-        marsRover.executeCommands(commands);
+        marsRover.executeCommands(location, commands);
 
-        MarsRover expectation = new MarsRover(2, 2, "E");
+        Location expectedLocation = new Location(2, 2, "E");
 
-        assertEquals(marsRover.x , expectation.x);
-        assertEquals(marsRover.y , expectation.y);
-        assertEquals(marsRover.direction , expectation.direction);
+        assertEquals(location.getX() , expectedLocation.getX());
+        assertEquals(location.getY() , expectedLocation.getY());
+        assertEquals(location.getDirection() , expectedLocation.getDirection());
     }
 
 
