@@ -33,6 +33,10 @@ public class MarsRover {
         }
     }
 
+    public void executeCommands(String commands) {
+
+    }
+
     private void turnRightRover() {
         switch (direction) {
             case NORTH:

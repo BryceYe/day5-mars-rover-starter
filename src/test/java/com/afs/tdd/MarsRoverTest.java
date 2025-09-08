@@ -296,6 +296,23 @@ public class MarsRoverTest {
         assertEquals(marsRover.direction , expectation.direction);
     }
 
+    @Test
+    public void should_return_1_1_N_when_input_0_0_N_MMRMM(){
+        int x = 0;
+        int y = 0;
+        String direction = "N";
+        String commands = "MMRMM";
+
+        MarsRover marsRover = new MarsRover(x, y, direction);
+
+        marsRover.executeCommands(commands);
+
+        MarsRover expectation = new MarsRover(2, 2, "E");
+
+        assertEquals(marsRover.x , expectation.x);
+        assertEquals(marsRover.y , expectation.y);
+        assertEquals(marsRover.direction , expectation.direction);
+    }
 
 
 
